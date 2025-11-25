@@ -11,7 +11,7 @@ const Navbar = () => {
   }
   
   return (
-    <nav className='flex bg-black text-white justify-between p-3 px-5'>
+    <nav className='flex bg-black text-white justify-between p-3 px-5 fixed top-0 left-0 w-full' >
         <div className="logo">
             <h2 className='text-3xl'>INoto</h2>
         </div>
