@@ -1,0 +1,18 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24" height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <!-- Slash line -->
+  <line x1="3" y1="3" x2="21" y2="21" />
+  <!-- Eye outline (same as eye, but split to work under slash) -->
+  <path d="M10.58 6.08C11.04 6.03 11.51 6 12 6c6.5 0 10 6 10 6a17.4 17.4 0 0 1-2.44 3.18" />
+  <path d="M6.16 6.16A17.4 17.4 0 0 0 2 12s3.5 7 10 7c1.49 0 2.82-.27 4-.76" />
+  <!-- Pupil/iris (partially “cut” by slash) -->
+  <path d="M9.88 9.88A3 3 0 0 1 14.12 14.12" />
+</svg>
