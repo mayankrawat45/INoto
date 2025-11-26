@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import { useRef, useState } from 'react'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
+    const Signupref=useRef();
     const Navigate=useNavigate();
     const [form, setform] = useState({name:"",email:"",password:""})
     const handlechange=(e) => {
@@ -21,6 +22,15 @@ const Signup = () => {
       }
     }
     
+    const Showpassword=(e)=>{
+      if(Signupref.current.type==="password"){
+          e.target.src='/eye.svg'
+          Signupref.current.type="text"
+      }else{
+          e.target.src='/eye-slash.svg'
+          Signupref.current.type="password"
+      }
+    }
     
   return (
     <div className='flex flex-col items-center justify-center my-5'>
@@ -34,9 +44,10 @@ const Signup = () => {
             <label className='font-semibold text-lg' htmlFor="email">Your email</label>
             <input className='px-2 py-2 outline-none border border-gray-300 rounded-xl' type="email" value={form.email} name='email' onChange={handlechange} required/>
         </div>
-        <div className='flex flex-col gap-2.5'>
+        <div className='flex flex-col gap-2.5 relative'>
+            <img className='absolute top-[60%] right-[2%]' onClick={Showpassword} src="/eye-slash.svg" width={20} alt="" />
             <label className='font-semibold text-lg' htmlFor="password">Your password</label>
-            <input className='px-2 py-2 outline-none border border-gray-300 rounded-xl' name='password' type="password" value={form.password} onChange={handlechange} required/>
+            <input className='px-2 py-2 outline-none border border-gray-300 rounded-xl' name='password' type="password" value={form.password} ref={Signupref} onChange={handlechange} required/>
         </div>
         <button type='button' className='bg-blue-700 font-semibold text-white text-lg rounded-xl px-4 py-1 my-1' onClick={handlesubmit} >Signup</button>
       </form>

@@ -22,7 +22,7 @@ const Login = () => {
       }
     }
 
-    const handleEyeSrc=(e)=>{
+    const Showpassword=(e)=>{
       if(loginRef.current.type==="password"){
           e.target.src='/eye.svg'
           loginRef.current.type="text"
@@ -42,7 +42,7 @@ const Login = () => {
             <input className='px-2 py-2 outline-none border border-gray-300 rounded-xl' type="email" value={form.email} name='email' onChange={handlechange} required/>
         </div>
         <div className='flex flex-col gap-2.5 relative '>
-            <img className='absolute top-[60%] right-[2%]' onClick={handleEyeSrc} src="/eye-slash.svg" width={20} alt="" />
+            <img className='absolute top-[60%] right-[2%]' onClick={Showpassword} src="/eye-slash.svg" width={20} alt="" />
             <label className='font-semibold text-lg' htmlFor="password">Your password</label>
             <input className='px-2 py-2 outline-none border border-gray-300 rounded-xl' name='password' type="password" ref={loginRef} value={form.password} onChange={handlechange} required/>
         </div>
