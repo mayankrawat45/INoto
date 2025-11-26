@@ -11,7 +11,7 @@ const Login = () => {
 
     const handlesubmit=async() => {
       try {
-        let res=await axios.post("http://localhost:5000/api/auth/login",form)
+        let res=await axios.post("https://inoto-backend.onrender.com/api/auth/login",form)
       let data=res.data;
       localStorage.setItem("authtoken",data.authtoken)
     //   navigate to home
