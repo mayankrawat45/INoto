@@ -11,7 +11,7 @@ const Signup = () => {
 
     const handlesubmit=async() => {
       try {
-        let res=await axios.post("http://localhost:5000/api/auth/signin",form)
+        let res=await axios.post("https://inoto-backend.onrender.com/api/auth/signin",form)
         console.log(res.data)
       
     //   navigate to home
