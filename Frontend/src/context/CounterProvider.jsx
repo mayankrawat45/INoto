@@ -8,7 +8,7 @@ export const Contextprovider=(props) => {
       const getnotes=async () => {
         const token =localStorage.getItem("authtoken")
         try {
-          let res=await axios.get("http://localhost:5000/api/notes/fetchallnotes",{
+          let res=await axios.get("https://inoto-backend.onrender.com/api/notes/fetchallnotes",{
           headers:{
             "auth-token":token,
             "Content-Type":"application/json"
@@ -23,7 +23,7 @@ export const Contextprovider=(props) => {
       const addnotes=async(note) => {
         const token=localStorage.getItem("authtoken")
         try {
-          let res=await axios.post("http://localhost:5000/api/notes/addnote",note,{
+          let res=await axios.post("https://inoto-backend.onrender.com/api/notes/addnote",note,{
           headers:{
             "auth-token":token,
             "Content-Type":"application/json"
@@ -39,7 +39,7 @@ export const Contextprovider=(props) => {
       const editnotes=async(id,editednote) => {
         const token=localStorage.getItem("authtoken")
         try {
-          let res=await axios.put(`http://localhost:5000/api/notes/editnote/${id}`,editednote,{
+          let res=await axios.put(`https://inoto-backend.onrender.com/api/notes/editnote/${id}`,editednote,{
             headers:{
               "auth-token":token,
               "Content-Type":"application/json"
@@ -54,7 +54,7 @@ export const Contextprovider=(props) => {
       const deletenote=async(id)=>{
         const token=localStorage.getItem("authtoken")
         try {
-          let res=await axios.delete(`http://localhost:5000/api/notes/deletenote/${id}`,{
+          let res=await axios.delete(`https://inoto-backend.onrender.com/api/notes/deletenote/${id}`,{
             headers:{
               "auth-token":token,
               "Content-Type":"application/json"
