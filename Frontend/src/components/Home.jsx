@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Notes from './Notes'
 import { Countercontext } from '../context/CounterContext'
 import { useContext } from 'react'
+import { toast } from 'react-toastify'
 
 const Home = () => {
   const navigate=useNavigate()
@@ -26,9 +27,11 @@ const Home = () => {
     if(form._id){ 
       editnotes(form._id,form)
       setform({title:"",desc:"",tag:""})
+      toast("note edited")
     }else{
       addnotes(form)
       setform({title:"",desc:"",tag:""})
+      toast("note added")
     }
   }
   

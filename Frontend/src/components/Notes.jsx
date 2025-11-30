@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import { Countercontext } from '../context/CounterContext'
+import { toast } from 'react-toastify'
 
 const Notes = (props) => {
   const context=useContext(Countercontext)
@@ -15,6 +16,7 @@ const Notes = (props) => {
     }
     const handleDelete=(id) => {
       deletenote(id)
+      toast("note deleted")
     }
     
     
@@ -34,7 +36,7 @@ const Notes = (props) => {
                   </div>
                   <div className='flex gap-1.5 items-start'>
                     <img className='hover:cursor-pointer' width={33} src="/edit.svg" alt="edit image" onClick={()=>{handleEdit(item)}} />
-                    <img className='hover:cursor-pointer' width={33} src="/delete.svg" alt="delte image" onClick={()=>{deletenote(item._id)}} />
+                    <img className='hover:cursor-pointer' width={33} src="/delete.svg" alt="delte image" onClick={()=>{handleDelete(item._id)}} />
                   </div>
                 </div>
             )
