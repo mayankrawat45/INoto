@@ -33,8 +33,8 @@ const Notes = (props) => {
                     <p className='text-lg'>{item.desc}</p>
                   </div>
                   <div className='flex gap-1.5 items-start'>
-                    <img width={33} src="/edit.svg" alt="edit image" onClick={()=>{handleEdit(item)}} />
-                    <img width={33} src="/delete.svg" alt="delte image" onClick={()=>{deletenote(item._id)}} />
+                    <img className='hover:cursor-pointer' width={33} src="/edit.svg" alt="edit image" onClick={()=>{handleEdit(item)}} />
+                    <img className='hover:cursor-pointer' width={33} src="/delete.svg" alt="delte image" onClick={()=>{deletenote(item._id)}} />
                   </div>
                 </div>
             )

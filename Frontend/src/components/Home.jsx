@@ -50,7 +50,7 @@ const Home = () => {
           <label htmlFor="title">Tag</label>
           <input className='border border-gray-400 rounded-lg p-2 outline-blue-500' type="text" name='tag' id='title' value={form.tag} onChange={handleChange} />
         </div>
-        <button className='bg-blue-500 p-2 px-4 rounded-lg font-semibold text-white w-fit' type='button' onClick={handleSubmit}>Add Note</button>
+        <button className='bg-blue-500 p-2 px-4 rounded-lg font-semibold text-white w-fit hover:cursor-pointer' type='button' onClick={handleSubmit}>Add Note</button>
       </form>
       <h1 className='text-4xl font-semibold'>Your Notes</h1>
       <Notes form={form} setform={setform}/>
