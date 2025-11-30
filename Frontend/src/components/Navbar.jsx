@@ -11,11 +11,11 @@ const Navbar = () => {
   }
   
   return (
-    <nav className='flex bg-black text-white justify-between p-3 px-5 fixed top-0 left-0 w-full' >
+    <nav className='flex bg-black text-white justify-between p-1  sm:p-3 sm:px-5 fixed top-0 left-0 w-full' >
         <div className="logo">
-            <h2 className='text-3xl'>INoto</h2>
+            <h2 className='text-xl sm:text-3xl font-light sm:font-normal'>INoto</h2>
         </div>
-        <ul className='flex gap-4 items-center text-xl'>
+        <ul className='flex gap-4 items-center text-sm  sm:text-xl'>
             <Link to={"/"} className='hover:text-gray-400'><li>Home</li></Link>
             <Link to={"/about"} className='hover:text-gray-400'><li>About</li></Link>
             {!isLoggedIn && <Link to={"/signup"} className='hover:text-gray-400'><li>Signup</li></Link>}

@@ -6,59 +6,59 @@ import { useContext } from 'react'
 import { toast } from 'react-toastify'
 
 const Home = () => {
-  const navigate=useNavigate()
-  const isLoggedIn=localStorage.getItem("authtoken")
-  const context=useContext(Countercontext);
-  const {editnotes,addnotes}=context;
-  const [form, setform] = useState({title:"",desc:"",tag:""})
-  
+  const navigate = useNavigate()
+  const isLoggedIn = localStorage.getItem("authtoken")
+  const context = useContext(Countercontext);
+  const { editnotes, addnotes } = context;
+  const [form, setform] = useState({ title: "", desc: "", tag: "" })
+
   useEffect(() => {
-    if(!isLoggedIn){
+    if (!isLoggedIn) {
       navigate("/login")
     }
   }, [navigate])
-  
 
-  const handleChange=(e) => {
-    setform({...form,[e.target.name]:e.target.value})
+
+  const handleChange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value })
   }
-  
-  const handleSubmit=(e) => {
-    if(form._id){ 
-      editnotes(form._id,form)
-      setform({title:"",desc:"",tag:""})
+
+  const handleSubmit = (e) => {
+    if (form._id) {
+      editnotes(form._id, form)
+      setform({ title: "", desc: "", tag: "" })
       toast("note edited")
-    }else{
+    } else {
       addnotes(form)
-      setform({title:"",desc:"",tag:""})
+      setform({ title: "", desc: "", tag: "" })
       toast("note added")
     }
   }
-  
-  
+
+
   return (
-    
-        <div className='w-[50vw] mx-auto my-5 flex flex-col gap-3'>
-      <h1 className='text-4xl font-semibold'>Add a Note</h1>
-      <form className='flex flex-col w-[40vw] gap-3.5' action="" >
-        <div className='flex flex-col gap-2.5 '>
+
+    <div className=' w-[70vw] sm:w-[50vw] mx-auto my-5 flex flex-col gap-3'>
+      <h1 className='text-2xl sm:text-4xl font-bold sm:font-semibold'>Add a Note</h1>
+      <form className='flex flex-col w-[60vw] sm:w-[40vw] gap-3.5' action="" >
+        <div className='flex flex-col gap-1 sm:gap-2.5 '>
           <label htmlFor="title">Title</label>
-          <input className='border border-gray-400 rounded-lg p-2 outline-blue-500' type="text" name='title' id='title' value={form.title} onChange={handleChange} />
+          <input className='border border-gray-400 rounded-lg p-1 sm:p-2 outline-blue-500' type="text" name='title' id='title' value={form.title} onChange={handleChange} />
         </div>
-        <div className='flex flex-col gap-2.5 '>
+        <div className='flex flex-col gap-1 sm:gap-2.5 '>
           <label htmlFor="title">Description</label>
-          <input className='border border-gray-400 rounded-lg p-2 outline-blue-500' type="text" name='desc' id='title' value={form.desc} onChange={handleChange} />
+          <input className='border border-gray-400 rounded-lg p-1 sm:p-2 outline-blue-500' type="text" name='desc' id='title' value={form.desc} onChange={handleChange} />
         </div>
-        <div className='flex flex-col gap-2.5 '>
+        <div className='flex flex-col gap-1 sm:gap-2.5 '>
           <label htmlFor="title">Tag</label>
-          <input className='border border-gray-400 rounded-lg p-2 outline-blue-500' type="text" name='tag' id='title' value={form.tag} onChange={handleChange} />
+          <input className='border border-gray-400 rounded-lg p-1 sm:p-2 outline-blue-500' type="text" name='tag' id='title' value={form.tag} onChange={handleChange} />
         </div>
-        <button className='bg-blue-500 p-2 px-4 rounded-lg font-semibold text-white w-fit hover:cursor-pointer' type='button' onClick={handleSubmit}>Add Note</button>
+        <button className='bg-blue-500 p-2 px-4 rounded-lg sm:text-lg text-sm font-semibold text-white w-fit hover:cursor-pointer' type='button' onClick={handleSubmit}>Add Note</button>
       </form>
-      <h1 className='text-4xl font-semibold'>Your Notes</h1>
-      <Notes form={form} setform={setform}/>
+      <h1 className='text-xl sm:text-4xl font-bold sm:font-semibold'>Your Notes</h1>
+      <Notes form={form} setform={setform} />
     </div>
-      
+
   )
 }
 
